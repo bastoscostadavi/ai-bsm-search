@@ -1,4 +1,4 @@
-name: Publish BSM Atlas
+name: Redirect to BSM Atlas
 
 on:
   push:
@@ -24,11 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Check static source
-        run: |
-          node --check website/app.js
-          node --check website/data.js
-          node website/check.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload website
